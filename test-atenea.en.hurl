@@ -24,22 +24,22 @@
 # Email: fraya@ieszaidinvergeles.org
 #
 
-GET http://atenea.olimpo.test/soyuz.html
+GET http://atenea.{{ site }}/atenea.html
 HTTP 200
 [Asserts]
-body contains "<h1>Soyuz site</h1>"
+body contains "<h1>Atenea site</h1>"
 
-GET http://atenea.olimpo.test
+GET http://atenea.{{ site }}
 HTTP 403
 [Asserts]
-body contains "You do not have permission to access apolo.olimpo.test"
+body contains "You do not have permission to access atenea.{{ site }}"
 
-GET http://atenea.olimpo.test/index.html
+GET http://atenea.{{ site }}/index.html
 HTTP 404
 [Asserts]
-body contains "Resource not found on atenea.olimpo.test"
+body contains "Resource not found on atenea.{{ site }}"
 
-GET http://atenea.olimpo.test/messages/
+GET http://atenea.{{ site }}/messages/
 HTTP 403
 [Asserts]
 body contains "You do not have permission"
