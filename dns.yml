@@ -22,3 +22,11 @@
       ansible.builtin.service:
         name: bind9
         state: restarted
+
+    - name: Copiar Ficheros
+      ansible.builtin.copy:
+        src: /vagrant/files/ns1.olimpo.test/named
+        dest: /etc/default/bind9
+        owner: root
+        group: bind
+        mode: "0644"
